@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@master
@@ -20,7 +20,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
+        BRANCH: docs
         FOLDER: dist
         BUILD_SCRIPT: npm install && npm run-script build
         CI: true
